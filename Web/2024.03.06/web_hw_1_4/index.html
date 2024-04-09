@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login</title>
+<style>
+    .input-label {
+        display: inline-block;
+        padding-left: 10px;
+    }
+</style>
+</head>
+<body>
+
+<form id="loginForm">
+    <label for="username" class="input-label" onclick="focusInput('username')">USERNAME:</label>
+    <input type="text" id="username" name="username" placeholder="아이디를 입력 해 주세요.">
+    <br>
+    <label for="password" class="input-label" onclick="focusInput('password')">PWD:</label>
+    <input type="text" id="password" name="password">
+    <input type="submit" value="로그인">
+</form>
+
+<script>
+    function focusInput(inputId) {
+        document.getElementById(inputId).focus();
+    }
+
+    document.getElementById("password").addEventListener("input", function() {
+        this.value = this.value.replace(/./g, '*');
+    });
+</script>
+
+</body>
+</html>

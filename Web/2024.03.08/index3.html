@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @keyframes ani {
+            from {
+                background-color: red;
+            }
+
+            to {
+                background-color: blue;
+                opacity: 0.5;
+                /* background: url(image.png); */
+            }
+        }
+
+        .box1 {
+            flex-grow: 1;
+            width: 100px;
+            height: 600px;
+            background: red;
+
+            animation: ani 3s 1s infinite;
+        }
+
+        .box2 {
+            flex-grow: 1;
+            width: 100px;
+            height: 600px;
+            background: blue;
+        }
+
+        .container {
+            display: flex;
+            background: url(image.png);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box1"></div>
+        <div class="box2"></div>
+        <div class="box1"></div>
+        <div class="box2"></div>
+        <div class="box1"></div>
+        <div class="box2"></div>
+        <div class="box1"></div>
+        <div class="box2"></div>
+    </div>
+</body>
+</html>

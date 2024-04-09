@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @keyframes ani {
+            0% {
+                /* background-color: green; */
+                border: 5px solid green;
+            }
+
+            50% {
+                /* background-color: aqua; */
+                border: 5px solid aqua;
+            }
+
+            100% {
+                border: 5px solid red;
+                /* background-color: blue; */
+                transform: rotate(180deg);
+            }
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            background: url(image.png);
+
+            animation: ani 2s 1s infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

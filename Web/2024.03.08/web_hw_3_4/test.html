@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bootstrap Media Query Example</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* Custom CSS for margin */
+    .custom-margin {
+      margin: 0 auto; /* Center align the div */
+    }
+
+    /* Define margin for different screen sizes using media queries */
+    @media (min-width: 768px) {
+      .custom-margin {
+        margin: 24px auto;
+      }
+    }
+
+    @media (min-width: 1200px) {
+      .custom-margin {
+        margin: 32px auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-12 custom-margin">
+        <!-- Content goes here -->
+        <p>This div has varying margins based on the device width.</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+
+  </div>
+  
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script>
+    // console.log(Vue)
+    // console.log(Vue.createApp)
+    // console.log(Vue.ref)
+
+    const { createApp, ref } = Vue
+
+    const app = createApp({
+      setup() {
+        // message === msg
+        const message = ref(1)
+        const msg = {
+          value : 1
+        }
+
+
+        return {
+
+        }
+      }
+    })
+
+    app.mount('#app')
+
+  </script>
+</body>
+</html>

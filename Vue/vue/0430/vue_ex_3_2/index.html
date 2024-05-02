@@ -15,17 +15,16 @@
 <body>
   <div id="app">
     <h1>Todo Application</h1>
-    <form>
-      <input type="text">
+    <form @submit.prevent="addTodo">
+      <input type="text" v-model="newTodo">
       <input type="submit" value="Add">
-      <!-- @submit.prevent="add" -->
     </form>
 
     <ul>
       <li v-for="todo in todos" :key="todo.id">
         <input type="checkbox" v-model="todo.isCompleted">
         <span :class="{ 'is-completed': todo.isCompleted }">{{ todo.text }}</span>
-        <button>Delete</button>
+        <button @click="deleteTodo(todo.id)">Delete</button>
       </li>
     </ul>
   </div>
@@ -37,12 +36,24 @@
     const app = createApp({
       setup() {
         const todos = ref([])
+        const newTodo = ref('')
 
-        const add = function() {
-
+        const addTodo = function() {
+          if (newTodo.value.trim() == '') {
+            return
+          }
+          const obj = {id : Date.now(),  text : newTodo.value, isCompleted : false}
+          todos.value.push(obj)
         }
 
-        return { todos, add }
+        const deleteTodo = function(id) {
+          // console.log(todo.value.findIndex(todo => todo.id === id))
+          const index = todos.value.findIndex(todo => todo.id === id)
+          todos.value.splice(index, 1)
+          newTodo.value = ''
+        }
+
+        return { todos, addTodo, newTodo, deleteTodo }
       }
     })
 

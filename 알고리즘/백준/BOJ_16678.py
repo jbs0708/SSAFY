@@ -1,3 +1,10 @@
+
+import sys
+
+sys.stdin = open("input.txt")
+sys.stdout = open("output.txt", 'w')
+
+
 N = int(input())
 inp_list = []
 
@@ -14,12 +21,7 @@ for p in inp_list:
     elif p < num:
         continue
     else:
-        temp = p
-        while True:
-            temp -= 1
-            ans += 1
-            if temp == num:
-                num += 1
-                break
+        ans += (p-num)
+        num += 1
 
 print(ans)
